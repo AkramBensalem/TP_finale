@@ -1,18 +1,16 @@
 <resources>
     <string name="app_name">TP_finale</string>
-    <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
+    <string name="action_go_to_favourite">Favourites</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="skip_previous">Skip Previous</string>
     <string name="skip_next">Skip Next</string>
     <string name="play">Play</string>
     <string name="title_of_the_music">Title of the music</string>
     <string name="channel_name">music</string>
     <string name="channel_description">this is channel for discriptions</string>
+    <string name="song_image">Song image</string>
+    <string name="no_favourite_song">No favourite song found</string>
+    <string name="close">close bottom sheet</string>
+    <string name="add_to_favourites">Add to favourite list</string>
 </resources>

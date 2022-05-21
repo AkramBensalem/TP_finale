@@ -3,9 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Akram_Bensalem/AndroidStudioProjects/TP_finale/app/src/main/res/layout/activity_favourite.xml" value="0.2" />
         <entry key="..\:/Users/Akram_Bensalem/AndroidStudioProjects/TP_finale/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Akram_Bensalem/AndroidStudioProjects/TP_finale/app/src/main/res/layout/content_main.xml" value="0.8800000000000001" />
+        <entry key="..\:/Users/Akram_Bensalem/AndroidStudioProjects/TP_finale/app/src/main/res/layout/favourite_play_bottom_sheet_layout.xml" value="0.1" />
         <entry key="..\:/Users/Akram_Bensalem/AndroidStudioProjects/TP_finale/app/src/main/res/layout/fragment_first.xml" value="0.1" />
+        <entry key="..\:/Users/Akram_Bensalem/AndroidStudioProjects/TP_finale/app/src/main/res/layout/item_playlist.xml" value="0.264" />
+        <entry key="..\:/Users/Akram_Bensalem/AndroidStudioProjects/TP_finale/app/src/main/res/layout/play_bottom_sheet_layout.xml" value="0.1" />
+        <entry key="..\:/Users/Akram_Bensalem/AndroidStudioProjects/TP_finale/app/src/main/res/layout/tweet_item_layout.xml" value="0.20471014492753623" />
+        <entry key="..\:/Users/Akram_Bensalem/AndroidStudioProjects/TP_finale/app/src/main/res/menu/menu_main.xml" value="0.20863616930312098" />
       </map>
     </option>
   </component>

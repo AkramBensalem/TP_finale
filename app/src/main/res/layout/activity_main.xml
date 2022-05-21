@@ -1,58 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:layout_marginBottom="32dp"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
-   <ImageView
-       android:layout_width="match_parent"
-       android:layout_height= "0dp"
-       android:layout_weight="1"
-       android:src="@drawable/background"
-       />
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/iv_no_favourites_song"
+        android:layout_width="360dp"
+        android:layout_height="360dp"
+        android:layout_gravity="center"
+        android:adjustViewBounds="false"
+        android:alpha="0.66"
+        android:contentDescription="@string/no_favourite_song"
+        android:cropToPadding="false"
+        android:scaleType="fitStart"
+        android:src="@drawable/no_favourite_music"
+        android:visibility="visible" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/song_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_margin="16dp">
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_skip_previous_24"
-            android:layout_marginHorizontal="32dp"
-            android:contentDescription="@string/skip_next" />
-
-        <ImageButton
-            android:id="@+id/play_pause"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_play_circle_outline_24"
-            android:layout_marginHorizontal="24dp"
-            android:contentDescription="@string/play"/>
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_round_skip_next_24"
-            android:layout_marginHorizontal="32dp"
-            android:contentDescription="@string/skip_previous" />
-
-    </LinearLayout>
-
-
-    <TextView
-        android:id="@+id/title_song"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/title_of_the_music"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_margin="8dp"
-        style="@style/TextAppearance.AppCompat.Title"/>
+        tools:itemCount="8"
+        tools:listitem="@layout/item_playlist"
+        android:visibility="gone" />
 
-</LinearLayout>
+</FrameLayout>
+
+
+ <include layout="@layout/play_bottom_sheet_layout" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -3,9 +3,12 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
+        android:name=".ApplicationSong"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -13,20 +16,92 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TP_finale">
 
+
+        <receiver android:name=".service.NotificationReceiver"
+            android:exported="false"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="dz.akram.bensalem.action.TOGGLE_PLAYBACK" />
+                <action android:name="dz.akram.bensalem.action.PLAY" />
+                <action android:name="dz.akram.bensalem.action.PAUSE" />
+                <action android:name="dz.akram.bensalem.action.SKIP_NEXT" />
+                <action android:name="dz.akram.bensalem.action.SKIP_PREVIOUS" />
+
+                <action android:name="dz.akram.bensalem.action.ui.PLAY" />
+                <action android:name="dz.akram.bensalem.action.ui.PAUSE" />
+                <action android:name="dz.akram.bensalem.action.ui.SKIP_NEXT" />
+                <action android:name="dz.akram.bensalem.action.ui.SKIP_PREVIOUS" />
+
+                <action android:name="dz.akram.bensalem.action.PLAY_NOTIFICATION" />
+                <action android:name="dz.akram.bensalem.action.PLAY_NEXT_NOTIFICATION" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".service.FavouriteNotificationReceiver"
+            android:exported="false"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="dz.akram.bensalem.action.favourite.TOGGLE_PLAYBACK" />
+                <action android:name="dz.akram.bensalem.action.favourite.PLAY" />
+                <action android:name="dz.akram.bensalem.action.favourite.PAUSE" />
+                <action android:name="dz.akram.bensalem.action.favourite.SKIP_NEXT" />
+                <action android:name="dz.akram.bensalem.action.favourite.SKIP_PREVIOUS" />
+
+                <action android:name="dz.akram.bensalem.action.favourite.ui.PLAY" />
+                <action android:name="dz.akram.bensalem.action.favourite.ui.PAUSE" />
+                <action android:name="dz.akram.bensalem.action.favourite.ui.SKIP_NEXT" />
+                <action android:name="dz.akram.bensalem.action.favourite.ui.SKIP_PREVIOUS" />
+
+                <action android:name="dz.akram.bensalem.action.favourite.PLAY_NOTIFICATION" />
+                <action android:name="dz.akram.bensalem.action.favourite.PLAY_NEXT_NOTIFICATION" />
+            </intent-filter>
+        </receiver>
+
         <service
-            android:name=".MediaService"
+            android:name=".service.MediaService"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="dz.akram.bensalem.action.TOGGLE_PLAYBACK" />
+                <action android:name="dz.akram.bensalem.action.PLAY" />
+                <action android:name="dz.akram.bensalem.action.PAUSE" />
+                <action android:name="dz.akram.bensalem.action.SKIP_NEXT" />
+                <action android:name="dz.akram.bensalem.action.SKIP_PREVIOUS" />
+                <action android:name="dz.akram.bensalem.action.REWIND" />
+                <action android:name="dz.akram.bensalem.action.STOP" />
+                <action android:name="dz.akram.bensalem.action.MUSIC_CLICKED" />
+            </intent-filter>
+        </service>
 
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".activities.MainActivity"
+            android:exported="true"
+            android:label="My Playlist Songs"
+            android:icon="@drawable/ic_baseline_play_circle_outline_24"
+            android:roundIcon="@drawable/ic_baseline_play_circle_outline_24"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="dz.akram.bensalem.action.ui.PLAY" />
+                <action android:name="dz.akram.bensalem.action.ui.PAUSE" />
+                <action android:name="dz.akram.bensalem.action.ui.SKIP_NEXT" />
+                <action android:name="dz.akram.bensalem.action.ui.SKIP_PREVIOUS" />
+
+                <action android:name="dz.akram.bensalem.action.notification.PLAY_NOTIFICATION" />
+                <action android:name="dz.akram.bensalem.action.notification.PLAY_NEXT_NOTIFICATION" />
+                <action android:name="dz.akram.bensalem.action.notification.PLAY_PREVIOUS_NOTIFICATION" />
+
             </intent-filter>
         </activity>
+
+
+        <activity
+            android:name=".activities.FavouriteActivity"
+            android:exported="true"
+            android:parentActivityName=".activities.MainActivity"
+            android:label="My Favourite Songs"/>
+
     </application>
 
 </manifest>
